@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
-class Files(models.Model):
+class File(models.Model):
     thumbnail = models.ImageField(upload_to='uploads/images', null=False, blank=False)
     filename = models.CharField(max_length=100, null=False, blank=False)
     description = models.TextField()

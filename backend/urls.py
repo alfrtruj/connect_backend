@@ -18,6 +18,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from connect.views import FileViewSet 
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register("", FileViewSet, basename='fileview')
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
