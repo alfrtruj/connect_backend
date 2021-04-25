@@ -54,9 +54,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'connect.apps.ConnectConfig',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -100,6 +102,9 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+
+CORS_ORIGIN_WHITELIST = ['http://localhost:3000']
 
 
 # Password validation
@@ -150,7 +155,4 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
-}
+
