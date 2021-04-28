@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'connect.apps.ConnectConfig',
     'rest_framework',
     'corsheaders',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -87,6 +88,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
+
 
 
 # Database
